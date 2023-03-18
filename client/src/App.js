@@ -1,15 +1,15 @@
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { useSelector } from "react-redux";
-import { themeSettings } from "theme";
-import { useMemo } from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
+import { useSelector } from 'react-redux'
+import { themeSettings } from 'theme'
+import { useMemo } from 'react'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { Layout, Dashboard } from 'scenes'
 
 function App() {
-  const mode = useSelector((state) => state.global.mode);
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const mode = useSelector(state => state.global.mode)
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
   return (
-    <div className='app'>
+    <div className="app">
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -22,7 +22,7 @@ function App() {
         </ThemeProvider>
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
